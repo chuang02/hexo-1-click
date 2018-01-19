@@ -1,0 +1,32 @@
+#!/bin/bash
+echo "Starting Hexo 1 Click..."
+echo ""
+route=$(cat ~/.hexrc)
+domain=$(cat ~/.hexup)
+cd $route
+v=`date`
+touch version.txt
+echo $v > version.txt
+hexo g
+git add .
+git commit -m "Deploied by HEXO 1 Click"
+git push
+
+echo ""
+echo version: $v
+echo "..."
+echo "Checking version update..."
+atm="1"
+ret=$(curl -s $domain/version.txt)
+while [ "$v" != "$ret" ]
+do
+  echo Checking...$atm
+  let "atm=$atm+1"
+  ret=$(curl -s $domain/version.txt)
+  sleep 2 
+done
+echo ""
+echo Returned: $ret
+echo ""
+echo "Updated!"
+echo "Rock... 'n Roll!!!"
