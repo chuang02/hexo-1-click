@@ -29,4 +29,4 @@ echo ""
 echo Returned: $ret
 echo ""
 echo "Updated!"
-echo "Rock... 'n Roll!!!"
+echo "Exiting Hexo 1 Click..."
