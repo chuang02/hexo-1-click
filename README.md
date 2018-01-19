@@ -3,6 +3,8 @@
 Hexo 1 Click 是为在Git上托管 Hexo 博客作者提供的一键部署程序，支持部署完成检查
 由 Shell 语言编写，轻便，支持多平台
 
+源码分析：<a href="https://billts.site/2018/01/19/hexo-1-click/">点击查看</a>
+
 ## 依赖
 
 * hexo-cli
